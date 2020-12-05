@@ -6,6 +6,7 @@
 
 # PODS
 ### Api
+* kubectl api-resources
 * kubectl run podtest --image=nginx:alpine
 * kubectl delete pod podtest
 
@@ -18,6 +19,7 @@
 * kubectl logs podtest -c contenedor1 
 ### Labels
 * kubectl get pods -l app=backend 
+* kubectl label pods podtest app=backend 
 ### Other
 * kubectl port-forward podtest 1522:80
 * kubectl exec -it podtest -- sh
@@ -26,3 +28,7 @@
 * kubectl apply -f pods.yaml
 * kubectl delete -f pods.yaml
 
+# Replica set 
+* kubectl get rs `or replicaset`
+* kubectl describe rs rs-test
+* kubectl get rs rs-test -o yaml
