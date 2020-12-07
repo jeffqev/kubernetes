@@ -20,6 +20,7 @@
 ### Labels
 * kubectl get pods -l app=backend 
 * kubectl label pods podtest app=backend 
+* kubectl get deployment --show-labels
 ### Other
 * kubectl port-forward podtest 1522:80
 * kubectl exec -it podtest -- sh
@@ -32,3 +33,22 @@
 * kubectl get rs `or replicaset`
 * kubectl describe rs rs-test
 * kubectl get rs rs-test -o yaml
+
+# Deployment
+`revisionHistoryLimit: 5`
+ * kubectl apply -f deployment.yaml
+ * kubectl apply -f deployment.yaml --record 
+ ### 
+ * kubectl rollout status deployment deployment-test
+ * kubectl rollout history deployment deployment-test
+ * kubectl describe deployment deployment-test
+ * kubectl rollout history deployment deployment-test --revision 3
+ ### Rolback
+* kubectl rollout undo deployment deployment-test --to-revision=3
+
+## Annotations - chance cause
+metadata:  <br /> 
+&nbsp;&nbsp;annotations: <br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;kubernetes.io/change-cause: "Port 110"
+ 
+ 
