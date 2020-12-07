@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kubernetes.io/change-cause: "Start Service"
+  name: deployment-test
+  labels:
+    name: front
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: front
+  template:
+    metadata:
+      labels:
+        name: front
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-test
+  labels:
+    name: front
+spec:
+  type: NodePort
+  selector:
+    name: front
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 80

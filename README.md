@@ -13,6 +13,7 @@
 ### Pod info
 * kubectl describe pod podtest
 * kubectl get pod podtest -o yaml
+* kubectl get pod -o wide
 ### Logs
 * kubectl logs podtest
 * kubectl logs podtest -f `logs realtime`
@@ -51,4 +52,7 @@ metadata:  <br />
 &nbsp;&nbsp;annotations: <br /> 
 &nbsp;&nbsp;&nbsp;&nbsp;kubernetes.io/change-cause: "Port 110"
  
- 
+# Service
+ * kubectl get svc -l app=front
+ * kubectl get endpoints
+ * kubectl describe svc service-test
