@@ -8,12 +8,15 @@
 ### Api
 * kubectl api-resources
 * kubectl run podtest --image=nginx:alpine
+* kubectl run --rm -ti podtest --image=nginx:alpine -- sh
 * kubectl delete pod podtest
 
 ### Pod info
 * kubectl describe pod podtest
 * kubectl get pod podtest -o yaml
 * kubectl get pod -o wide
+* kubectl get pod --watch
+
 ### Logs
 * kubectl logs podtest
 * kubectl logs podtest -f `logs realtime`
@@ -27,6 +30,8 @@
 * kubectl exec -it podtest -- sh
 
 # Manifest
+containers: imagePullPolicy: IfNotPresent
+
 * kubectl apply -f pods.yaml
 * kubectl delete -f pods.yaml
 
@@ -55,4 +60,5 @@ metadata:  <br />
 # Service
  * kubectl get svc -l app=front
  * kubectl get endpoints
+ * kubectl describe endpoints service-test
  * kubectl describe svc service-test
