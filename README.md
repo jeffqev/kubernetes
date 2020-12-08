@@ -81,3 +81,10 @@ deployment-test.test-ns.svc.cluster.local
  # Node
  * kubectl get nodes
  * kubectl describe node minikube
+
+ # Limit "QoS"
+ Guaranted:  `limits == requests`<br>
+ Burstable:  `limits > requests`<br>
+ BestEffort: `no limits  no requests`<br>
+
+ * kubectl get pod podtest -o yaml | grep -i qos
