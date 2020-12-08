@@ -62,3 +62,22 @@ metadata:  <br />
  * kubectl get endpoints
  * kubectl describe endpoints service-test
  * kubectl describe svc service-test
+
+# Name space
+Dns: service + namespace + svc.cluster.local <br>
+deployment-test.test-ns.svc.cluster.local
+ * kubectl get all -n development
+ * kubectl get namespaces 
+ * kubectl get namespaces --show-labels
+ * kubectl get pods --namespaces default
+ * kubectl create namespaces test-ns
+ * kubectl run podtest --image=nginx:alpine --namespace development 
+ ### Contexto
+ * kubectl config current-context 
+ * kubectl config view `path: .kube/config` 
+ * kubectl config set-context dev --namespace=development \ --cluster=minikube \ --user=minikube
+ * kubectl config use-context dev
+
+ # Node
+ * kubectl get nodes
+ * kubectl describe node minikube
