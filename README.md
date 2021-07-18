@@ -28,6 +28,7 @@
 ### Other
 * kubectl port-forward podtest 1522:80
 * kubectl exec -it podtest -- sh
+* kubectl --kubeconfig=kubeconfig.yaml get pods
 
 # Manifest
 containers: imagePullPolicy: IfNotPresent
